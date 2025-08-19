@@ -1,20 +1,47 @@
-# Student Performance Prediction
+This project focuses on predicting student exam scores based on various academic and socio-demographic factors using different linear regression approaches.
 
-This project aims to predict student exam scores based on various factors using different linear regression models.
+📌 Project Workflow
 
-## Project Steps
+Data Loading & Exploration:
 
-1.  **Data Loading and Exploration:** The dataset containing student performance factors was loaded and initial exploration was performed to understand the data structure, check for missing values, and identify data types.
-2.  **Data Preprocessing:** Missing values in the 'Teacher_Quality', 'Parental_Education_Level', and 'Distance_from_Home' columns were filled with the mode of each respective column. Categorical features were encoded using Label Encoding to convert them into numerical format for model training.
-3.  **Exploratory Data Analysis (EDA):** Visualizations such as pie charts, count plots, and scatter plots were generated to analyze the distribution of categorical features and the relationship between numerical features and the target variable ('Exam_Score').
-4.  **Correlation Analysis:** The correlation of each feature with the 'Exam_Score' was calculated and sorted to identify features with stronger linear relationships.
-5.  **Model Training and Evaluation:**
-    *   **Simple Linear Regression:** A simple linear regression model was trained using 'Attendance' as the predictor, as it showed the highest correlation with 'Exam_Score'. The model was evaluated using Mean Squared Error (MSE) and R-squared score on both the training and testing sets.
-    *   **Multiple Linear Regression:** A multiple linear regression model was trained using all features except 'Exam_Score'. The model was evaluated using MSE and R-squared score.
-    *   **Polynomial Regression:** A polynomial regression model with degree 2 was trained using all features. The model was evaluated using MSE and R-squared score.
+Imported the dataset and performed initial inspection for structure, missing values, and data types.
 
-## Results and Analysis
+Data Preprocessing:
 
-The simple linear regression model using 'Attendance' and the multiple linear regression model using all features yielded similar R-squared and MSE values. This suggests that despite including multiple features, many of the additional features had low linear correlation with the 'Exam_Score', as indicated by the correlation analysis. Therefore, adding them to a linear model did not significantly improve the predictive performance over using just the most correlated feature.
+Handled missing values in Teacher_Quality, Parental_Education_Level, and Distance_from_Home using mode imputation.
 
-The polynomial regression model showed improved performance with a higher R-squared score and lower MSE on both the training and test sets compared to the simple and multiple linear regression models. This suggests that there might be non-linear relationships between the features and the exam score, which the polynomial model was able to capture.
+Applied Label Encoding to convert categorical features into numerical form.
+
+Exploratory Data Analysis (EDA):
+
+Generated pie charts, count plots, and scatter plots to visualize categorical distributions and feature-target relationships.
+
+Correlation Analysis:
+
+Computed correlations with Exam_Score and identified Attendance as the strongest predictor.
+
+Model Training & Evaluation:
+
+Simple Linear Regression: Trained with Attendance as predictor (highest correlation).
+
+Multiple Linear Regression: Trained using all features except the target variable.
+
+Polynomial Regression (degree 2): Trained with all features to capture potential non-linear patterns.
+
+Evaluation Metrics: Mean Squared Error (MSE) and R² score on both training and test sets.
+
+📊 Results & Insights
+
+Simple vs. Multiple Linear Regression:
+Both models yielded similar R² and MSE, suggesting that most additional features contributed little predictive power compared to Attendance.
+
+Polynomial Regression:
+Outperformed linear models with higher R² and lower MSE, indicating that non-linear relationships exist between features and exam scores.
+
+✅ Key Takeaways
+
+Attendance is the most significant linear predictor of exam performance.
+
+Adding weakly correlated features did not improve linear models.
+
+Polynomial regression better captured feature interactions and non-linear trends, improving overall predictive accuracy.
