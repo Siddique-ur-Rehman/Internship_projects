@@ -1,55 +1,30 @@
-# Cover Type Prediction
 
-This project aims to predict the cover type of a forest based on various environmental factors.
+# Student Performance Prediction
 
-## Project Overview
+This project focuses on predicting student exam scores by leveraging various student-related and environmental factors using linear regression models.
 
-The project involved the following steps:
+## Project Methodology
 
-1.  **Data Loading and Exploration:** Loaded the dataset and performed initial exploratory data analysis (EDA) to understand the data distribution, check for missing values and duplicates, and visualize key features like 'Cover_Type', 'Elevation', and 'Horizontal_Distance_To_Hydrology'.
+The analysis followed a structured approach:
 
-2.  **Data Preprocessing:** Renamed initial unnamed columns for clarity.
+1.  **Data Acquisition & Initial Assessment:** The dataset was loaded, and a preliminary examination was conducted to understand its structure, identify missing values, and determine data types.
+2.  **Data Preprocessing:** Missing data in 'Teacher_Quality', 'Parental_Education_Level', and 'Distance_from_Home' were imputed using the mode. Categorical features were transformed into a numerical format via Label Encoding.
+3.  **Exploratory Data Analysis (EDA):** Comprehensive visualizations, including pie charts, count plots, and scatter plots, were generated to analyze feature distributions and their relationships, particularly with the target variable 'Exam_Score'.
+4.  **Feature Correlation Analysis:** The linear correlation of each feature with 'Exam_Score' was computed and ranked to highlight the most influential predictors.
+5.  **Predictive Modeling & Evaluation:**
+    *   **Simple Linear Regression:** A model was developed using 'Attendance', identified as the feature with the highest correlation, and evaluated using Mean Squared Error (MSE) and R-squared.
+    *   **Multiple Linear Regression:** A model incorporating all features (excluding the target) was trained and assessed based on MSE and R-squared.
+    *   **Polynomial Regression:** A second-degree polynomial model was applied to all features and evaluated using MSE and R-squared.
 
-3.  **Model Training:** Trained three classification models:
-    *   Decision Tree Classifier
-    *   Random Forest Classifier
-    *   XGBoost Classifier
+## Outcomes
 
-4.  **Model Evaluation:** Evaluated each model using accuracy, precision (weighted), and confusion matrices on both the training and test datasets.
+The project successfully implemented and evaluated three distinct linear regression models for predicting student exam scores. The performance of each model was quantified using standard regression metrics.
 
-5.  **Feature Importance Analysis:** Visualized the feature importance for the Random Forest and XGBoost models, including grouping the importance of one-hot encoded features like 'Soil_Type' and 'Wilderness_Area'.
 
-## Evaluation Results
+## Dependencies
 
-Here's a summary of the test data evaluation results for each model:
+Required libraries are listed in the `requirements.txt` file.
 
-### Decision Tree Classifier
+## Execution
 
-*   **Accuracy:** 0.9058
-*   **Precision (weighted):** 0.9057
-
-### Random Forest Classifier
-
-*   **Accuracy:** 0.9558
-*   **Precision (weighted):** 0.9559
-
-### XGBoost Classifier
-
-*   **Accuracy:** 0.9110
-*   **Precision (weighted):** 0.9110
-
-Based on the test set evaluation, the **Random Forest Classifier** achieved the highest accuracy and precision.
-
-## Feature Importance
-
-The feature importance analysis revealed the relative influence of different features on the models' predictions. Grouping the one-hot encoded features provided a better understanding of the overall importance of categories like Soil Type and Wilderness Area.
-
-## Requirements
-
-The libraries used in this project are listed in the `requirements.txt` file.
-
-## How to Run
-
-1.  Clone the repository.
-2.  Install the required libraries using `pip install -r requirements.txt`.
-3.  Run the Jupyter Notebook (`Tree_base.ipynb`).
+To replicate the analysis, ensure dependencies are installed from `requirements.txt` and run the project notebook.
